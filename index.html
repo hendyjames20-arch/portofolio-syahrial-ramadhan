@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syahrial Ramadhan | Bisnis Digital & Mi Sagu Khas Riau</title>
+    <meta name="description" content="Portfolio Syahrial Ramadhan, mahasiswa Bisnis Digital Universitas Darunnajah, yang mengembangkan branding dan pemasaran produk Mi Sagu Khas Riau.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        riau: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            500: '#d97706',
+                            600: '#b45309',
+                            700: '#92400e',
+                            800: '#78350f',
+                            900: '#451a03',
+                        },
+                        terracotta: {
+                            500: '#e05a47',
+                            600: '#c84332',
+                            700: '#a33022',
+                        },
+                        emeraldCustom: {
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #fef3c7; }
+        ::-webkit-scrollbar-thumb { background: #b45309; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #78350f; }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+        .animate-float { animation: floatSlow 6s ease-in-out infinite; }
+
+        .bg-riau-pattern {
+            background-color: #fffbeb;
+            background-image: radial-gradient(#b45309 0.75px, transparent 0.75px), radial-gradient(#b45309 0.75px, #fffbeb 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.05;
+        }
+    </style>
+</head>
+<body class="bg-[#FFFBEB] text-gray-800 font-sans antialiased selection:bg-riau-500 selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-riau-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-riau-700 via-terracotta-600 to-riau-500 flex items-center justify-center text-white text-2xl font-black shadow-md shadow-riau-700/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-gray-900 block leading-tight font-serif">Syahrial Ramadhan</span>
+                        <span class="text-xs font-semibold text-riau-600 tracking-wider uppercase">Bisnis Digital & Mi Sagu Riau</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-700">
+                    <a href="#about" class="hover:text-riau-600 transition-colors">Tentang Saya</a>
+                    <a href="#nilai-sagu" class="hover:text-riau-600 transition-colors">Nilai Mi Sagu</a>
+                    <a href="#projects" class="hover:text-riau-600 transition-colors">Proyek & Kampanye</a>
+                    <a href="#calculator" class="hover:text-riau-600 transition-colors">Simulasi Kuliner</a>
+                    <a href="#contact" class="hover:text-riau-600 transition-colors">Kontak</a>
+                </div>
+
+                <div class="hidden md:flex items-center">
+                    <a href="https://www.instagram.com/syahrial_ramadhan1" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center gap-2 bg-gradient-to-r from-riau-600 to-terracotta-600 text-white px-5 py-2.5 rounded-full font-medium text-sm shadow-md shadow-riau-600/20 hover:shadow-lg hover:shadow-riau-600/30 hover:-translate-y-0.5 transition-all">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                        <span>@syahrial_ramadhan1</span>
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="text-gray-700 hover:text-riau-600 focus:outline-none p-2" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden bg-white border-b border-riau-100 px-4 pt-2 pb-6 space-y-3 shadow-xl" id="mobile-menu">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-riau-50 hover:text-riau-600">Tentang Saya</a>
+            <a href="#nilai-sagu" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-riau-50 hover:text-riau-600">Nilai Mi Sagu Riau</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-riau-50 hover:text-riau-600">Proyek & Bisnis</a>
+            <a href="#calculator" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-riau-50 hover:text-riau-600">Simulasi Kuliner</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-riau-50 hover:text-riau-600">Kontak</a>
+            <a href="https://www.instagram.com/syahrial_ramadhan1" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center justify-center gap-2 bg-riau-600 text-white py-3 rounded-xl font-medium mt-4 shadow-md">
+                <i class="fa-brands fa-instagram text-lg"></i>
+                <span>Follow Instagram @syahrial_ramadhan1</span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-riau-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-riau-100 border border-riau-300 px-4 py-1.5 rounded-full text-riau-800 font-semibold text-xs sm:text-sm shadow-sm">
+                        <span class="flex h-2.5 w-2.5 rounded-full bg-emeraldCustom-500 animate-pulse"></span>
+                        Mahasiswa Bisnis Digital &bull; Universitas Darunnajah
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        Akselerasi Digital <span class="font-serif italic font-normal text-terracotta-600">Mi Sagu Khas Riau</span> Menuju Pasar Global.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Saya <strong class="text-gray-900">Syahrial Ramadhan</strong>, mengombinasikan strategi <i>Digital Marketing</i>, <i>E-Commerce Branding</i>, dan teknologi rantai pasok untuk mengangkat kelezatan warisan kuliner khas Riau: <strong>Mi Sagu yang Sehat & Bebas Gluten</strong>.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#projects" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-riau-600 to-riau-700 hover:from-riau-700 hover:to-riau-800 text-white font-semibold px-8 py-4 rounded-2xl shadow-lg shadow-riau-600/30 hover:shadow-riau-600/50 hover:-translate-y-0.5 transition-all">
+                            <span>Lihat Portofolio</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/syahrial_ramadhan1" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center justify-center gap-2 bg-white border-2 border-riau-600 text-riau-700 hover:bg-riau-50 font-semibold px-8 py-4 rounded-2xl shadow-sm hover:-translate-y-0.5 transition-all">
+                            <i class="fa-brands fa-instagram text-xl text-terracotta-600"></i>
+                            <span>Instagram</span>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-riau-200/80 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <span class="block text-2xl font-extrabold text-riau-700 font-serif">100%</span>
+                            <span class="text-xs font-medium text-gray-500">Bebas Gluten</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-extrabold text-riau-700 font-serif">Riau</span>
+                            <span class="text-xs font-medium text-gray-500">Kuliner Khas Selatpanjang</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-extrabold text-riau-700 font-serif">UD</span>
+                            <span class="text-xs font-medium text-gray-500">Universitas Darunnajah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-riau-500 to-terracotta-500 rounded-3xl blur-2xl opacity-20 transform scale-95"></div>
+
+                    <div class="relative bg-white p-5 rounded-3xl shadow-2xl border border-riau-100 max-w-md w-full animate-float">
+                        <div class="relative h-72 sm:h-80 rounded-2xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&q=80&w=800" 
+                                 alt="Mi Sagu Khas Riau" 
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                                 onerror="this.src='https://placehold.co/600x400/b45309/FFFFFF?text=Mi+Sagu+Khas+Riau'">
+
+                            <div class="absolute top-3 left-3 bg-terracotta-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-md">
+                                <i class="fa-solid fa-pepper-hot mr-1"></i> Kuliner Khas Riau
+                            </div>
+                            <div class="absolute bottom-3 right-3 bg-black/70 backdrop-blur-md text-white px-3 py-1 rounded-lg text-xs font-medium">
+                                <i class="fa-solid fa-leaf text-emeraldCustom-500 mr-1"></i> Sagu Selatpanjang
+                            </div>
+                        </div>
+
+                        <div class="bg-riau-50 p-4 rounded-xl border border-riau-100 flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-riau-600 text-white flex items-center justify-center font-bold text-sm">
+                                    SR
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-gray-900">Syahrial Ramadhan</h4>
+                                    <p class="text-xs text-gray-500">Mahasiswa Bisnis Digital</p>
+                                </div>
+                            </div>
+                            <span class="text-xs font-semibold bg-emeraldCustom-500/10 text-emeraldCustom-600 px-2.5 py-1 rounded-md">
+                                Inovator Kuliner
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white border-y border-riau-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" 
+                             alt="Syahrial Ramadhan - Universitas Darunnajah" 
+                             class="rounded-3xl shadow-xl w-full h-auto object-cover border-4 border-riau-100"
+                             onerror="this.src='https://placehold.co/600x600/fef3c7/78350f?text=Syahrial+Ramadhan'">
+
+                        <div class="absolute -bottom-6 -right-6 bg-riau-700 text-white p-5 rounded-2xl shadow-xl hidden sm:block max-w-xs">
+                            <i class="fa-solid fa-graduation-cap text-3xl mb-2 text-riau-200"></i>
+                            <p class="text-sm font-bold">Universitas Darunnajah</p>
+                            <p class="text-xs text-riau-100">Program Studi Bisnis Digital</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block px-3 py-1 bg-riau-100 text-riau-800 rounded-md font-bold text-xs uppercase tracking-wider">
+                        Tentang Saya
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 font-serif">
+                        Menghubungkan <span class="text-riau-600">Kuliner Tradisional Riau</span> dengan Ekosistem Digital.
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sebagai mahasiswa <strong>Bisnis Digital di Universitas Darunnajah</strong>, saya terdorong untuk membawa potensi pangan lokal Indonesia ke tingkat berikutnya. <strong>Mi Sagu Khas Riau</strong> (khususnya dari Selatpanjang, Kabupaten Kepulauan Meranti) memiliki cita rasa unik yang khas dengan taburan ikan teri renyah, tauge segar, dan bumbu tumis pedas gurih.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Melalui penerapan keilmuan bisnis digital — seperti <i>e-commerce strategy</i>, <i>social media branding</i>, dan <i>SEO content marketing</i> — tujuan saya adalah menjadikan Mi Sagu Riau sebagai pilihan kuliner sehat nusantara favorit bagi masyarakat modern.
+                    </p>
+
+                    <div class="pt-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Bidang Keahlian & Fokus:</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-bullhorn text-riau-600 mr-1"></i> Digital Marketing</span>
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-cart-shopping text-riau-600 mr-1"></i> E-Commerce & Marketplace</span>
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-pepper-hot text-riau-600 mr-1"></i> Culinary Branding</span>
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-magnifying-glass text-riau-600 mr-1"></i> SEO & Content Strategy</span>
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-chart-line text-riau-600 mr-1"></i> Data Analytics</span>
+                            <span class="px-3 py-1.5 bg-riau-50 border border-riau-200 text-riau-800 text-xs font-semibold rounded-lg"><i class="fa-solid fa-box-open text-riau-600 mr-1"></i> Inovasi Kemasan Sagu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nilai-sagu" class="py-20 bg-riau-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-3 py-1 bg-riau-100 text-riau-800 rounded-md font-bold text-xs uppercase tracking-wider">Keunggulan Produk</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3 font-serif">Mengapa Mi Sagu Khas Riau?</h2>
+                <p class="text-gray-600 mt-3">Tiga pilar utama yang menjadikan Mi Sagu Riau berpotensi besar di era bisnis digital.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border border-riau-100 shadow-sm hover:shadow-xl hover:border-riau-300 transition-all group">
+                    <div class="w-14 h-14 bg-emeraldCustom-500/10 text-emeraldCustom-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">100% Bebas Gluten & Indeks Glikemik Rendah</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Diolah dari tepung pati pohon sagu murni tanpa campuran terigu. Makanan ideal untuk penderita diabetes, diet rendah karbohidrat, dan pecinta gaya hidup sehat.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-bold text-emeraldCustom-600 gap-1"><i class="fa-solid fa-circle-check"></i> Healthy Choice</span>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-riau-100 shadow-sm hover:shadow-xl hover:border-riau-300 transition-all group">
+                    <div class="w-14 h-14 bg-riau-100 text-riau-700 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ketahanan Pangan & Warisan Riau</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Sagu adalah tanaman asli lahan gambut Riau yang ramah lingkungan. Mengonsumsi Mi Sagu membantu memberdayakan petani lokal di Selatpanjang & Meranti.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-bold text-riau-700 gap-1"><i class="fa-solid fa-seedling"></i> Sustainable Farming</span>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border border-riau-100 shadow-sm hover:shadow-xl hover:border-riau-300 transition-all group">
+                    <div class="w-14 h-14 bg-terracotta-500/10 text-terracotta-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Potensi Pasar E-Commerce & Ekspor</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Inovasi Mi Sagu Instant dalam kemasan siap saji memiliki peluang besar memasuki pasar nasional dan ekspor mie sehat ke mancanegara.
+                    </p>
+                    <span class="inline-flex items-center text-xs font-bold text-terracotta-600 gap-1"><i class="fa-solid fa-globe"></i> Digital Business Scalability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="px-3 py-1 bg-riau-100 text-riau-800 rounded-md font-bold text-xs uppercase tracking-wider">Portofolio Bisnis</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2 font-serif">Proyek & Kampanye Digital</h2>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="project-filters">
+                    <button class="filter-btn active bg-riau-600 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all" data-filter="all">Semua</button>
+                    <button class="filter-btn bg-riau-50 text-gray-700 hover:bg-riau-100 px-4 py-2 rounded-xl text-sm font-semibold transition-all" data-filter="branding">Branding</button>
+                    <button class="filter-btn bg-riau-50 text-gray-700 hover:bg-riau-100 px-4 py-2 rounded-xl text-sm font-semibold transition-all" data-filter="ecommerce">E-Commerce</button>
+                    <button class="filter-btn bg-riau-50 text-gray-700 hover:bg-riau-100 px-4 py-2 rounded-xl text-sm font-semibold transition-all" data-filter="campaign">Kampanye Media</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card group bg-white rounded-3xl border border-riau-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="campaign">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80&w=800" 
+                             alt="Kampanye Digital Mi Sagu" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/b45309/FFFFFF?text=Kampanye+Mi+Sagu'">
+                        <span class="absolute top-3 left-3 bg-terracotta-600 text-white text-xs px-3 py-1 rounded-full font-semibold">Kampanye Media</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-riau-600 transition-colors">Kampanye "Nikmatnya Mi Sagu Riau"</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                            Strategi konten Instagram & TikTok untuk mengedukasi anak muda Jakarta tentang tekstur kenyal alami mi sagu goreng teri khas Riau.
+                        </p>
+                        <button onclick="openModal('modal1')" class="text-riau-600 font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                            <span>Baca Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card group bg-white rounded-3xl border border-riau-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="ecommerce">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" 
+                             alt="E-Commerce Strategy Mi Sagu" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/b45309/FFFFFF?text=E-Commerce+Strategy'">
+                        <span class="absolute top-3 left-3 bg-riau-600 text-white text-xs px-3 py-1 rounded-full font-semibold">E-Commerce</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-riau-600 transition-colors">Optimalisasi Store Shopee & Tokopedia</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                            Perancangan toko online mi sagu instant Selatpanjang dengan sistem pengiriman aman vacuum pack ke seluruh Jabodetabek.
+                        </p>
+                        <button onclick="openModal('modal2')" class="text-riau-600 font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                            <span>Baca Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="project-card group bg-white rounded-3xl border border-riau-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" data-category="branding">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800" 
+                             alt="Visual Branding Packaging" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                             onerror="this.src='https://placehold.co/600x400/b45309/FFFFFF?text=Visual+Branding'">
+                        <span class="absolute top-3 left-3 bg-emeraldCustom-600 text-white text-xs px-3 py-1 rounded-full font-semibold">Branding</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-riau-600 transition-colors">Visual Identity & Eco Packaging</h3>
+                        <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                            Konsep desain kemasan modern bernuansa Melayu Riau yang dilengkapi petunjuk memasak cepat saji 5 menit.
+                        </p>
+                        <button onclick="openModal('modal3')" class="text-riau-600 font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all">
+                            <span>Baca Studi Kasus</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculator" class="py-20 bg-gradient-to-br from-riau-900 via-riau-800 to-terracotta-700 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="px-3 py-1 bg-white/20 backdrop-blur-md text-riau-200 rounded-full font-semibold text-xs uppercase tracking-wider">Interactive Tool</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold mt-3 font-serif">Kalkulator Nutrisi & Racikan Mi Sagu Riau</h2>
+                <p class="text-riau-100 mt-2">Pilih variasi penyajian khas Riau favorit Anda dan hitung estimasi nutrisinya!</p>
+            </div>
+
+            <div class="bg-white text-gray-900 rounded-3xl p-6 sm:p-10 shadow-2xl max-w-4xl mx-auto border border-riau-200">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Pilih Racikan Khas Riau:</label>
+                            <select id="sago-recipe" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-riau-600 focus:outline-none text-sm font-medium">
+                                <option value="goreng-teri">Mi Sagu Goreng Teri & Tauge Khas Selatpanjang</option>
+                                <option value="kuah-pedas">Mi Sagu Kuah Bumbu Udang & Sambal Belacan</option>
+                                <option value="goreng-telur">Mi Sagu Goreng Telur Orak-Arik Simpel</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Jumlah Porsi (Orang):</label>
+                            <input type="number" id="sago-portions" value="1" min="1" max="10" 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-riau-600 focus:outline-none text-sm font-bold">
+                        </div>
+
+                        <button onclick="calculateSagoNutrition()" class="w-full bg-riau-600 hover:bg-riau-700 text-white font-bold py-3.5 rounded-xl transition-all shadow-md">
+                            <i class="fa-solid fa-calculator mr-2"></i> Hitung Estimasi Nutrisi
+                        </button>
+                    </div>
+
+                    <div class="bg-riau-50 p-6 rounded-2xl border border-riau-200 space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-riau-800">Ringkasan Estimasi Nutrisi</h4>
+
+                        <div class="flex justify-between items-center border-b border-riau-200 pb-2">
+                            <span class="text-sm text-gray-600">Estimasi Energi:</span>
+                            <span class="font-extrabold text-riau-700 text-xl" id="calc-calories">360 kcal</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b border-riau-200 pb-2">
+                            <span class="text-sm text-gray-600">Kandungan Gluten:</span>
+                            <span class="font-bold text-emeraldCustom-600 text-sm">0% (Gluten-Free)</span>
+                        </div>
+
+                        <div class="flex justify-between items-center border-b border-riau-200 pb-2">
+                            <span class="text-sm text-gray-600">Serat Pangan Sagu:</span>
+                            <span class="font-bold text-gray-800 text-sm" id="calc-fiber">~7 gram</span>
+                        </div>
+
+                        <p class="text-xs text-riau-800 italic pt-2" id="calc-fact">
+                            💡 "Ciri khas Mi Sagu Khas Riau adalah perpaduan rasa kenyal mi sagu dengan gurihnya ikan teri penggorengan!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto bg-riau-pattern rounded-3xl p-8 sm:p-12 border border-riau-200 shadow-lg">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <div class="w-16 h-16 bg-gradient-to-tr from-riau-600 to-terracotta-600 text-white rounded-2xl flex items-center justify-center text-3xl mx-auto mb-4 shadow-md">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 font-serif">Mari Berkolaborasi!</h2>
+                    <p class="text-gray-600 text-sm mt-2">
+                        Tertarik berdiskusi tentang Bisnis Digital, riset pasar kuliner sagu, atau peluang kemitraan? Silakan hubungi saya di bawah ini:
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-riau-200 shadow-sm mb-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-4 text-center sm:text-left">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-2xl flex-shrink-0">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Instagram Resmi</h4>
+                            <p class="text-xs text-gray-500">@syahrial_ramadhan1</p>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/syahrial_ramadhan1" target="_blank" rel="noopener noreferrer" 
+                       class="bg-gradient-to-r from-riau-600 to-terracotta-600 text-white text-sm font-bold px-6 py-3 rounded-xl hover:shadow-lg transition-all">
+                        Kunjungi Profile Instagram
+                    </a>
+                </div>
+
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Nama Anda</label>
+                            <input type="text" id="contact-name" required placeholder="Masukkan nama..." 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-riau-600 focus:outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Email / Kontak</label>
+                            <input type="text" id="contact-email" required placeholder="Email atau WhatsApp..." 
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-riau-600 focus:outline-none text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 uppercase mb-1">Pesan / Topik Diskusi</label>
+                        <textarea id="contact-message" rows="4" required placeholder="Tuliskan pesan atau ide kolaborasi..." 
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-riau-600 focus:outline-none text-sm"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-riau-700 hover:bg-riau-800 text-white font-bold py-3.5 rounded-xl transition-all shadow-md">
+                        Kirim Pesan Diskusi
+                    </button>
+                </form>
+
+                <div id="form-alert" class="hidden mt-4 p-4 rounded-xl text-sm text-center font-semibold"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal1" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal1')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="bg-terracotta-500/10 text-terracotta-600 text-xs px-3 py-1 rounded-full font-bold">Studi Kasus - Kampanye Media</span>
+            <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-4 font-serif">Kampanye "Nikmatnya Mi Sagu Riau"</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed text-sm">
+                Riset strategi konten visual pendek untuk memperkenalkan variasi olahan Mi Sagu Selatpanjang khas Riau kepada audiens muda di perkotaan.
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6 text-sm">
+                <li>Pembuatan 10+ video reels Instagram bertema keunikan mie gluten free.</li>
+                <li>Peningkatan kesadaran merek (*brand awareness*) rekaan sebesar 40%.</li>
+                <li>Edukasi perbandingan nilai gizi pati sagu vs tepung terigu.</li>
+            </ul>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal1')" class="bg-riau-600 text-white px-6 py-2.5 rounded-xl font-semibold text-sm">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal2')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="bg-riau-100 text-riau-800 text-xs px-3 py-1 rounded-full font-bold">Studi Kasus - E-Commerce</span>
+            <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-4 font-serif">Optimalisasi Store Shopee & Tokopedia</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed text-sm">
+                Merancang alur konversi penjualan mi sagu instant kemasan lengkap dengan bumbu tumis khas Riau.
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6 text-sm">
+                <li>Penyusunan kata kunci SEO "Mi Sagu Riau Selatpanjang Asli".</li>
+                <li>Strategi bundling hemat 5 bungkus gratis sampel bumbu teri khas.</li>
+                <li>Desain banner toko visual warm & appetizing.</li>
+            </ul>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal2')" class="bg-riau-600 text-white px-6 py-2.5 rounded-xl font-semibold text-sm">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal3')" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-600">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <span class="bg-emeraldCustom-500/10 text-emeraldCustom-600 text-xs px-3 py-1 rounded-full font-bold">Studi Kasus - Branding</span>
+            <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-4 font-serif">Visual Identity & Eco Packaging</h3>
+            <p class="text-gray-600 mb-4 leading-relaxed text-sm">
+                Mengintegrasikan ornamen ukiran Melayu Riau pada desain kemasan ramah lingkungan untuk produk mie sagu olahan.
+            </p>
+            <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6 text-sm">
+                <li>Pemilihan palet warna terracotta dan emas sagu.</li>
+                <li>Pencantuman QR Code menuju video tutorial memasak mi sagu goreng.</li>
+            </ul>
+            <div class="flex justify-end">
+                <button onclick="closeModal('modal3')" class="bg-riau-600 text-white px-6 py-2.5 rounded-xl font-semibold text-sm">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:flex sm:justify-between sm:items-center">
+            <div class="mb-4 sm:mb-0 text-center sm:text-left">
+                <span class="text-lg font-bold text-white tracking-tight font-serif">Syahrial Ramadhan</span>
+                <p class="text-xs text-gray-500 mt-1">Bisnis Digital Universitas Darunnajah &bull; Inovasi Mi Sagu Khas Riau</p>
+            </div>
+
+            <div class="flex justify-center space-x-6 text-xl">
+                <a href="https://www.instagram.com/syahrial_ramadhan1" target="_blank" rel="noopener noreferrer" class="hover:text-riau-500 transition-colors">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-600 mt-8">
+            &copy; 2026 Syahrial Ramadhan. All Rights Reserved. Universitas Darunnajah.
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-riau-600', 'text-white');
+                    b.classList.add('bg-riau-50', 'text-gray-700');
+                });
+
+                btn.classList.add('active', 'bg-riau-600', 'text-white');
+                btn.classList.remove('bg-riau-50', 'text-gray-700');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        window.addEventListener('click', (e) => {
+            ['modal1', 'modal2', 'modal3'].forEach(id => {
+                const modal = document.getElementById(id);
+                if (e.target === modal) closeModal(id);
+            });
+        });
+
+        function calculateSagoNutrition() {
+            const recipe = document.getElementById('sago-recipe').value;
+            const portionsInput = document.getElementById('sago-portions');
+            let portions = parseInt(portionsInput.value) || 1;
+            if (portions < 1) portions = 1;
+
+            let baseCal = 360;
+            let fiber = 7;
+            let fact = "";
+
+            if (recipe === 'goreng-teri') {
+                baseCal = 390;
+                fiber = 7;
+                fact = "💡 'Ciri khas Selatpanjang: Mi sagu disajikan dengan taburan ikan teri garing dan tauge renyah!'";
+            } else if (recipe === 'kuah-pedas') {
+                baseCal = 310;
+                fiber = 8;
+                fact = "💡 'Kuah pedas gurih kaldu udang memberikan aroma rempah Melayu Riau yang sangat kaya.'";
+            } else if (recipe === 'goreng-telur') {
+                baseCal = 350;
+                fiber = 6;
+                fact = "💡 'Sajian sederhana namun kaya protein dan serat alami pati sagu.'";
+            }
+
+            document.getElementById('calc-calories').textContent = `${baseCal * portions} kcal`;
+            document.getElementById('calc-fiber').textContent = `~${fiber * portions} gram`;
+            document.getElementById('calc-fact').textContent = fact;
+        }
+
+        const contactForm = document.getElementById('contact-form');
+        const formAlert = document.getElementById('form-alert');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('contact-name').value;
+
+            formAlert.className = "mt-4 p-4 rounded-xl text-sm text-center font-semibold bg-emeraldCustom-500/10 text-emeraldCustom-700 border border-emeraldCustom-500/20";
+            formAlert.textContent = `Terima kasih, ${name}! Pesan Anda telah terkirim. Syahrial akan segera merespons.`;
+            formAlert.classList.remove('hidden');
+
+            contactForm.reset();
+            setTimeout(() => {
+                formAlert.classList.add('hidden');
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
